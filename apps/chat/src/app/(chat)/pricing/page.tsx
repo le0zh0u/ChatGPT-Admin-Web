@@ -144,7 +144,7 @@ export default function PricingPage() {
             </div>
           </div>
       </div>
-      <div className={styles.switch}>
+      {/* <div className={styles.switch}>
         <button
           className={`${styles.button} ${
             paymentCycle === "monthly" ? styles.active : ""
@@ -171,17 +171,18 @@ export default function PricingPage() {
           年付
           <span className={styles["discount-badge"]}>七折</span>
         </button>
-      </div>
+      </div> */}
 
       <div className={styles["container"]}>
-        {prices.map((price, index) => (
+        <div>放二维码</div>
+        {/* {prices.map((price, index) => (
           <PricingItem
             key={index}
             router={router}
             cycle={paymentCycle}
             price={price}
           />
-        ))}
+        ))} */}
       </div>
     </>
   );

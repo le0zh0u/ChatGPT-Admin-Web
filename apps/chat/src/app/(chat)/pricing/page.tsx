@@ -120,15 +120,6 @@ export default function PricingPage() {
       <div className={styles["window-header"]}>
         <div className={styles["window-header-title"]}>
           <div className={styles["window-header-main-title"]}>免责说明</div>
-          <div className={styles["window-header-sub-title"]}>
-            <h2>本站永不提供任何上网的技术和软件教程</h2>
-            <p>本站仅供免费用于学习测试，请勿用于任何违法活动行为</p>
-            <p>开发难度大，希望你可以进群支持一下我，或者直接打个款开心一下</p>
-            <p>禁止发布、传播任何违法、违规内容，使用本网站，视您接受并同意《免责声明》</p>
-            <p>服务器昂贵,接口昂贵,但网站免费！！底下输入框输入就能直接用～</p>
-            <p>如果你觉得对你有帮助可以进群或者打赏让服务器活的久一点</p>
-            <p>每人每月捐个三元、服务就能永久免费下去！！</p>
-</div>
         </div>
         <div className={styles["window-actions"]}>
           <div className={styles["window-action-button"]}>
@@ -142,6 +133,19 @@ export default function PricingPage() {
         </div>
       </div>
 
+      <div className={styles["window-header"]}>
+        <div className={styles["window-header-title"]}>
+          <div className={styles["window-header-sub-title"]}>
+              <h3>本站永不提供任何上网的技术和软件教程</h3>
+              <p>本站仅供免费用于学习测试，请勿用于任何违法活动行为</p>
+              <p>开发难度大，希望你可以进群支持一下我，或者直接打个款开心一下</p>
+              <p>禁止发布、传播任何违法、违规内容，使用本网站，视您接受并同意《免责声明》</p>
+              <p>服务器昂贵,接口昂贵,但网站免费！！底下输入框输入就能直接用～</p>
+              <p>如果你觉得对你有帮助可以进群或者打赏让服务器活的久一点</p>
+              <p>每人每月捐个三元、服务就能永久免费下去！！</p>
+            </div>
+          </div>
+      </div>
       <div className={styles.switch}>
         <button
           className={`${styles.button} ${

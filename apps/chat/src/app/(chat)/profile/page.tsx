@@ -109,7 +109,7 @@ export default function Profile() {
       </div>
       <div className={styles["settings"]}>
         <List>
-          <ProfileItem title={Locale.Settings.Avatar}>
+          {/* <ProfileItem title={Locale.Settings.Avatar}>
             <Popover
               onClose={() => setShowEmojiPicker(false)}
               content={
@@ -131,7 +131,7 @@ export default function Profile() {
                 <Avatar role="user" />
               </div>
             </Popover>
-          </ProfileItem>
+          </ProfileItem> */}
 
           <ProfileItem title={Locale.Settings.Account}>
             <div>{email}</div>

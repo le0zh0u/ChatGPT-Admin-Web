@@ -6,7 +6,8 @@ import {
   InvitationCodeLogic,
   AccessControlLogic,
 } from "database";
-import { ReturnStatus, ResponseStatus } from "@/app/api/typing.d";
+import { ResponseStatus } from "@/app/api/typing.d";
+import { REPLServer } from "repl";
 
 const ifVerifyCode = !!process.env.NEXT_PUBLIC_EMAIL_SERVICE;
 
@@ -57,13 +58,21 @@ export async function POST(req: NextRequest): Promise<Response> {
 
     // After registration, directly generate a JWT Token and return it.
     const accessControl = new AccessControlLogic();
-    const token = await accessControl.newJWT(email);
+    const tokenGenerator = await accessControl.newJWT(email);
+    if (!tokenGenerator)
+      return NextResponse.json({
+        status: ResponseStatus.Failed,
+      });
+    const { token: sessionToken, exp } = tokenGenerator;
     return NextResponse.json({
       status: ResponseStatus.Success,
-      sessionToken: token,
+      sessionToken,
+      exp,
     });
   } catch (error) {
     console.error("[REGISTER]", error);
     return new Response("[INTERNAL ERROR]", { status: 500 });
   }
 }
+
+export const runtime = "edge";
